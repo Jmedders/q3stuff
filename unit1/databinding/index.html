@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="What is your name?" ng-model="name" id="name">
+  <select name="dropdown" ng-model="dropsdown">
+    <option value="Dogs">Dogs</option>
+    <option value="Cats" selected>Cats</option>
+    <option value="Dogs and cats">Dogs and Cats</option>
+    <option value="Neither">Neither</option>
+  </select>
+  <h1 id='stuff'></h1>
+  <h1>My name is:  {{name}}</h1>
+  <h3>You chose: {{dropsdown}}</h3>
+  <script>
+    var nameField = document.getElementById('name')
+
+    nameField.onkeydown = updateNameDisplay;
+    nameField.onkeyup = updateNameDisplay;
+    nameField.onkeypress = updateNameDisplay;
+    function updateNameDisplay() {
+        document.getElementById('stuff').innerHTML = "vanilla JS: " + this.value || "??";
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</body>
+</html>
