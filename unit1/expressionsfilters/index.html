@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</head>
+<body>
+  <h1>Simple Expressions:</h1>
+  <p>1+2= {{1+2}}</p>
+  <p>My name is: {{"Bojack" + " " + "Horseman"}}</p>
+  <p>The array [99,43,22] is {{ [99,43,22].length }} items long.</p>
+
+  <h1>Filters:</h1>
+  <p>{{3.14159265359 | currency:"&euro;"}}</p>
+
+  <p>Please say something: <input type="text" ng-model="speak"></p>
+  <p>Yelling: {{speak | uppercase}}</p>
+  <p>Whispering: {{speak | lowercase}}</p>
+
+  <p>{{3.14159265359 | number:3}}</p>
+  <p>{{3.14159265359 | number:6}}</p>
+  <p>{{3.14159265359 | number:1}}</p>
+
+  <p>How many digits of pi do you want? <select name="pi" ng-model="pi">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select></p>
+  <ng-pluralize count="pi"
+                when="{'1': 'Here you go, here is the first 1 digit of pi:',
+                       'other': 'Here you go, here are the first {} digits of pi:'}">
+  </ng-pluralize><br>
+  <p>{{3.14159265359 | number: pi}}</p>
+
+  <h1>Super useful Tip Calculator</h1>
+  <p>How much did your meal cost? <input type="text" ng-model="mealcost"></p>
+  <p>How much do you want to tip?</p>
+  <select name="tip" ng-model="tip">
+    <option value="0.1">10%</option>
+    <option value="0.15">15%</option>
+    <option value="0.2">20%</option>
+  </select>
+  <p>Subtotal: {{mealcost | currency}}</p>
+  <p>Tip: {{mealcost * tip | currency}}</p>
+
+  <div>{{this}}</div> <!-- The result of this is "$SCOPE", I think this shows
+  that you're accessing the ng-app and linking the view with the controller
+   each time you use the double brackets -->
+
+</body>
+</html>
