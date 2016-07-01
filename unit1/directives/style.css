@@ -1,0 +1,12 @@
+.highlight {
+  background-color: yellow;
+}
+.highlighter {
+  background-color: hotpink;
+}
+.error{
+  color: red;
+}
+.good{
+  color: green;
+}
