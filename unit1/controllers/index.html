@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</head>
+<body>
+  <div ng-controller="myFirstController">
+    <h1>My name is {{name}}</h1>
+    <input ng-model="name" type="text" placeholder="What is your name">
+  </div>
+  <div ng-controller="exercisesController">
+    <h1>My favorite color is {{favColor}}</h1>
+    <h3>There are {{secondsInACentury() | number}} seconds in a century</h3>
+    <h3>The date is {{rightNow() | date}} </h3>
+    <input ng-model="name" type="text" placeholder="What is your name">
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
