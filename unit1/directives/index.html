@@ -45,10 +45,10 @@
   <div ng-class='{highlighter: 4 * 5 == 20}'>4 + 4 = 10</div>
   <h1>Sign up page</h1>
   <form name="myForm"></form>
-    <input type="password" ng-model="password" ng-class='{error: password.length < 5, good: password.length > 5}'>
-    <h3 ng-show="password.length < 5"> Password is invalid!</h3>
+    <input type="password" ng-model="password" ng-class='{error: password.length <= 5, good: password.length > 5}'>
+    <h3 ng-show="password.length <= 5"> Password is invalid!</h3>
     <input ng-show="password.length > 5" type="submit">
-    <h3 ng-class='{error : password.length < 5, good : password.length > 5}'>Your password is {{password.length}} characters long</h3>
+    <h3 ng-class='{error : password.length <= 5, good : password.length > 5}'>Your password is {{password.length}} characters long</h3>
   </form>
   <script src="main.js"></script>
 </body>
