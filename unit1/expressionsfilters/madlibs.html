@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="madlibsapp">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
 </head>
 <body>
-  <h1>Please fill out the following:</h1>
-  <p>Boy's name <input type="text" placeholder="Enter a boy's name" ng-model="boyname"></p>
-  <p>Adjective <input type="text" placeholder="Enter an adjective" ng-model="adjective"></p>
-  <p>Plural noun <input type="text" placeholder="Enter a plural noun" ng-model="pnoun1"></p>
-  <p>Plural noun <input type="text" placeholder="Enter a plural noun" ng-model="pnoun2"></p>
-  <p>An insect, plural<input type="text" placeholder="Enter an insect (plural)" ng-model="insect"></p>
-  <p>Plural noun<input type="text" placeholder="Enter an plural noun" ng-model="pnoun3"></p>
-  <p>A verb ending in "s"<input type="text" placeholder="Enter an verb ending in 's'" ng-model="verb"></p>
-  <h3>I'm in love with {{boyname}}. He's so {{adjective}}! He has big flat {{pnoun1}}, and when our {{pnoun2}} meet, I get {{insect}} in my stomach. I've fallen for him like a ton of {{pnoun3}}, and he {{verb}} me, too. But I think he's got another girlfriend. What should I do?</h3>
-
+    <h1>Please fill out the following:</h1>
+  <div ng-controller="madLibController">
+    {{boyname}}
+    <p>Boy's name <input type="text" placeholder="Enter a boy's name" ng-model="madlib.boyname"></p>
+    <p>Adjective <input type="text" placeholder="Enter an adjective" ng-model="madlib.adjective"></p>
+    <p>Plural noun <input type="text" placeholder="Enter a plural noun" ng-model="madlib.pnoun1"></p>
+    <p>Plural noun <input type="text" placeholder="Enter a plural noun" ng-model="madlib.pnoun2"></p>
+    <p>An insect, plural<input type="text" placeholder="Enter an insect (plural)" ng-model="madlib.insect"></p>
+    <p>Plural noun<input type="text" placeholder="Enter an plural noun" ng-model="madlib.pnoun3"></p>
+    <p>A verb ending in "s"<input type="text" placeholder="Enter an verb ending in 's'" ng-model="madlib.verb"></p>
+    <button ng-click="madlib.isTrue = true">Generate madlibs</button>
+    <button ng-click="madlib.isTrue = false">Play again?</button>
+    <h3 ng-show="madlib.isTrue == true">I'm in love with {{madlib.boyname}}. He's so {{madlib.adjective}}! He has big flat {{madlib.pnoun1}}, and when our {{madlib.pnoun2}} meet, I get {{madlib.insect}} in my stomach. I've fallen for him like a ton of {{madlib.pnoun3}}, and he {{madlib.verb}} me, too. But I think he's got another girlfriend. What should I do?</h3>
   </div>
-
-
+  <script src="app.js"></script>
 </body>
 </html>
