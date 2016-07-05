@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</head>
+<body>
+  <div ng-controller="eventController">
+    <h3>The number is: {{view.number}}</h3>
+    <button ng-click="view.pickRandomNumber()">Pick Random Number</button>
+  </div>
+  <div ng-controller="eventsController">
+    <h2>Word Reverser</h2>
+    <h3> Your word is: {{events.texts}}</h3>
+    <input type="text" ng-model="events.texts">
+    <button ng-click="events.reverser()">Reverse!</button>
+  </div>
+  <div ng-controller="pingPongController">
+    <h2>Ping Pong Score Keeper</h2>
+    <div class="leftie" ng-click="pongs.count= pongs.count+1" ng-class='{winner: pongs.count >= 11, loser: pongs.counts >= 11}'=>
+      <h2 id="player">Player 1</h2>
+      <div id="countnum">{{pongs.count}}</div>
+    </div>
+    <div class="rightie" ng-click="pongs.counts= pongs.counts+1" ng-class='{winner: pongs.counts >= 11, loser: pongs.count >= 11}'>
+      <h2 id="player">Player 2</h2>
+      <div id="countnum">{{pongs.counts}}</div>
+    </div>
+
+    <button class="reset" ng-click="pongs.counts = 0; pongs.count =0">Reset!</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

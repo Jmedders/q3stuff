@@ -1,0 +1,34 @@
+.leftie{
+  display: inline-block;
+  background: lightblue;
+  width: 40%;
+  height: 40vh;
+  float: left
+}
+.rightie{
+  display: inline-block;
+  background: lightblue;
+  width: 40%;
+  margin-left: 1%;
+  height: 40vh;
+  float: left;
+  border-left: 1px solid black;
+}
+#player{
+  text-align: center;
+}
+.reset{
+  clear:both;
+  margin-left: 40%;
+  margin-right: 18%;
+}
+#countnum{
+  text-align: center;
+  font-size: 4em;
+}
+.winner{
+  background: green;
+}
+.loser{
+  background: red;
+}
