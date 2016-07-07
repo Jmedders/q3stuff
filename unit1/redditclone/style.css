@@ -1,0 +1,104 @@
+.header{
+  background: lightgray;
+  color: gray;
+  float: left;
+  display: inline-block;
+  height: 8%;
+  width: 100%;
+  border-bottom: 2px solid gray
+}
+.title{
+  padding-left: 20px;
+  display: inline-block;
+  width: 10%;
+}
+#post{
+  display: inline-block;
+  padding-right: 20px;
+}
+#sortie{
+  margin-left: 20px;
+}
+.pictures{
+  height: 150px;
+  width: 180px;
+  padding: 25px;
+  padding-right: 10px;
+  display: inline;
+}
+.posttitle{
+  display: inline-block;
+  position: absolute;
+  margin-top: 20px;
+}
+#postinfo{
+  background: lightgray;
+  width: 84%;
+  margin: 8%;
+  margin-top:2%;
+  margin-bottom: 2%;
+  height: 100%;
+}
+.authorname{
+  display: inline-block;
+  float: right;
+  margin-top: 40px;
+  padding-right: 20px;
+}
+
+.info{
+  display: inline;
+  float: right;
+  margin-top: -140px;
+  margin-right: 100px;
+  width: 70%;
+  text-align: justify;
+}
+.arrow{
+  display: inline;
+}
+.good{
+  color: green;
+}
+.bad{
+  color: red;
+}
+.neutral{
+  color: black;
+}
+.dates{
+  display: inline-block;
+  position: relative;
+}
+.comments{
+  display: inline-block;
+  position: relative;
+}
+
+.commentinfo{
+  display: inline-block;
+  width: 85%;
+  padding-left: 15%;
+  text-align: justify;
+  font-size: 0.85em;
+}
+
+.help-block{
+  color: red;
+  margin-left: 10%;
+}
+.forminput {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  font-size: 1.5em;
+}
+.button {
+   margin-left: 48%;
+   font-size: 2em;
+   display: inline;
+}
+.formhelp{
+  background: 1px solid red;
+}

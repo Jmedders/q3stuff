@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redditApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js"></script>
+</head>
+<body>
+  <div ng-controller="redditController">
+    <header class="header">
+      <h3 class="title">Reddit Clone</h3>
+      <h4 id="post" ng-click="isTrue = true">+ Submit Post</h4>
+      <input type="text" placeholder="Search" ng-model="search">
+      <select id="sortie" ng-model="sortie">
+        <option value="count" selected>Sort By Votes</option>
+        <option value="date">Sort By Date</option>
+        <option value="title">Sort By Title</option>
+      </select>
+    </header>
+    <form name="postForm" ng-show="isTrue">
+      <input type="text" name="title" placeholder="Title" ng-model="newpost.title" ng-minlength=3 class="forminput">
+      <p ng-show="postForm.title.$invalid &amp;&amp; !postForm.title.$pristine" class="help-block">Title is too short</p>
+      <input type="text" name="info" placeholder="Information" ng-model="newpost.information" ng-minlength=10 class="forminput">
+      <p ng-show="postForm.info.$invalid &amp;&amp; !postForm.info.$pristine" class="help-block">More information needed</p>
+      <input type="url"  name="pic" placeholder="Picture Url" ng-model="newpost.pic" class="forminput">
+      <p ng-show="postForm.info.$invalid" class="help-block">Enter a valid url</p>
+      <input type="text" name="author" placeholder="Author" ng-model="newpost.author" class="forminput">
+      <input type="submit" value="cancel" ng-click="clear(); isTrue = false" class="button">
+      <input type="submit" ng-click="addPost(); clear(); isTrue = false" class="button">
+    </form>
+    <div id="postinfo" ng-repeat="element in post | filter: search | orderBy: sortie: 'reverse'; track by $index">
+      <img ng-src="{{element.pic}}" alt="Hello" class="pictures">
+        <h3 class="posttitle">{{element.title}}
+          <div class="arrow" ng-click="element.count=element.count+1">&#8607;</div>
+          <div class='arrow' ng-click="element.count=element.count-1">&#8609;</div>
+          <div class='arrow' ng-class='{good: element.count > 0, bad: element.count < 0, neutral: element.count == 0}'>{{element.count}}</div>
+        </h3>
+        <h5 class="authorname">By: {{element.author}}</h5>
+        <h4 class="info">{{element.information}}</h4>
+        <h5 class='dates'> <i class="fa fa-calendar" aria-hidden="true"></i> {{element.date | amCalendar:referenceTime:formats}} |</h5>
+        <h5 class='comments' ng-click="showComment = true"> <i class="fa fa-envelope" aria-hidden="true"></i> View comments |</h5>
+        <h5 class='comments' ng-click="showCommentForm = true"> <i class="fa fa-envelope" aria-hidden="true"></i> Write comments </h5>
+        <div class="commentinfo" ng-repeat="info in element.comments" ng-show="showComment">
+          <h4>{{info.author}} says: {{info.comment}}</h4>
+        </div>
+        <form name="postForm" ng-show="showCommentForm" class="commentinfo">
+          <input type="text" placeholder="Author" ng-model="newcomment.author">
+          <input type="text" placeholder="Comment" ng-model="newcomment.comment">
+          <input type="submit" value="cancel" ng-click="clearComment(); showCommentForm = false">
+          <input type="submit" ng-click="addComment(newcomment, element.id); clearComment(); newcomment = {}; showCommentForm = false">
+        </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
