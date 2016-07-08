@@ -14,7 +14,7 @@
       <option value="price">Price</option>
     </select>
     <ul>
-      <li ng-repeat="element in array | orderBy : sorty: 'reverse'">
+      <li ng-repeat="element in array | orderBy : sorty">
         <h3>{{element.title}}</h3>
         <h5 class="orange" ng-hide="element.onSale==false">Price: {{element.price | currency}}  ON SALE!!!</h5>
         <h5 ng-show="element.onSale==false">Price: {{element.price | currency}}</h5>
