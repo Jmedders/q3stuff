@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="animationsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+</head>
+<body ng-controller="MainController">
+  <input type="text" ng-model="view.search">
+  <div ng-repeat="instructor in view.instructors | filter:view.search">
+    {{instructor}}
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
