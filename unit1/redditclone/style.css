@@ -102,3 +102,25 @@
 .formhelp{
   background: 1px solid red;
 }
+
+.ng-enter {
+  transition:0.4s ease all;
+  opacity:0;
+  transform:translateY(100%);
+}
+
+.ng-enter.ng-enter-active {
+  opacity:1;
+  transform:translateX(0);
+}
+
+.ng-leave {
+  transition:0.4s ease all;
+  opacity:1;
+  transform:translateX(0);
+}
+
+.ng-leave.ng-leave-active {
+  opacity:0;
+  transform:translateX(100%);
+}
