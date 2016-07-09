@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customFilterApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</head>
+<body>
+  <div>
+    <h3>kebab filter on number: {{24 | kebab}}</h3>
+    <h3>Kebab filter: {{"where in the world_is_carmen_san_diego" | kebab}}</h3>
+    <h3>No filter: {{"where in the-world is carmen_san_diego"}}</h3>
+    <h3>camelCase Filter: {{"where in the-world is carmen_san_diego" | camelCase}}</h3>
+    <h3>pigLatin Filter: {{"where in the world is carmen san diego" | reversereverse}}</h3>
+    <h3>redact Filter: {{"where in the world is carmen san diego" | redactor: "Carmen"}}</h3>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
