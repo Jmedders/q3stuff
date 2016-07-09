@@ -12,7 +12,8 @@
     <h3>No filter: {{"where in the-world is carmen_san_diego"}}</h3>
     <h3>camelCase Filter: {{"where in the-world is carmen_san_diego" | camelCase}}</h3>
     <h3>pigLatin Filter: {{"where in the world is carmen san diego" | reversereverse}}</h3>
-    <h3>redact Filter: {{"where in the world is carmen san diego" | redactor: "Carmen"}}</h3>
+    <input type="text" ng-model="hello">
+    <h3>redact Filter: {{"where in the world is carmen san diego" | redactor: hello}}</h3>
   </div>
   <script src="app.js"></script>
 </body>
