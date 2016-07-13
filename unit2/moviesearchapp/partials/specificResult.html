@@ -1,0 +1,8 @@
+<form>
+  <input type="text" ng-model="roots.searchingOMDB">
+  <input type="submit" ng-click="roots.searches(); view.go('')">
+</form>
+<h3>{{view.titleInfo}} ({{view.year}})</h3>
+<img src="{{view.poster}}" alt="{{view.titleInfo}} image">
+<h5>{{view.actors}}</h5>
+<h5>Directed by: {{view.director}}</h5>

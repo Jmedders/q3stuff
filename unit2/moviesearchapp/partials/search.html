@@ -1,0 +1,8 @@
+<form>
+  <input type="text" ng-model="view.searchOMDB">
+  <input type="submit" ng-click="view.searching()">
+</form>
+<div ng-repeat="results in view.searchresult">
+  <h4><a href="#/{{results.imdbID}}" ng-click="view.specificTitle()" ng-model="imdbIDlink">{{results.Title}}</a> {{results.Year}}</h4>
+  <img ng-src="{{results.Poster}}" alt="{{results.Title}}"></img>
+</div>
