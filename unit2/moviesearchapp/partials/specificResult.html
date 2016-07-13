@@ -2,7 +2,13 @@
   <input type="text" ng-model="roots.searchingOMDB">
   <input type="submit" ng-click="roots.searches(); view.go('')">
 </form>
+<select name="selector" ng-model="roots.selector">
+  <option value="movie">Movies</option>
+  <option value="series">Tv Shows</option>
+  <option value="episode">Episodes</option>
+</select>
 <h3>{{view.titleInfo}} ({{view.year}})</h3>
 <img src="{{view.poster}}" alt="{{view.titleInfo}} image">
 <h5>{{view.actors}}</h5>
 <h5>Directed by: {{view.director}}</h5>
+<h5>Plot: {{view.plot}}</h5>
