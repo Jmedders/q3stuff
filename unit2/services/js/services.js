@@ -4,10 +4,10 @@ app.factory("firstService", function() {
     // we must return an object, everything we return can be accessed externally
     return {
       sayHi: function() {
-        return "Hello!"
+        return "Privet"
       },
       sayGoodbye: function() {
-        return "Goodbye!"
+        return "Do svidaniye"
       },
       getAllUsers: function() {
         // some AJAX call to our database to get all the users
