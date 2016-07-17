@@ -3,27 +3,16 @@ app.controller('serverController', function($scope, $http){
   $http.get('https://still-tundra-8387.herokuapp.com/messages').then(function(data){
     $scope.view = {};
     $scope.view.newdata = data['data'];
-    $scope.view.idcount = 64;
+    $scope.view.idcount = 63;
 
     $scope.view.userInput = function(){
-      $scope.newpost.id = $scope.view.idcount;
-      var config = {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-        }
-      }
-
-
-      $http.post('https://still-tundra-8387.herokuapp.com/messages', data, config)
-      .success(function (data, status, headers, config) {
+      $http.post('https://still-tundra-8387.herokuapp.com/messages', data)
+      .success(function (data) {
           $scope.view.newdata.push($scope.newpost);
-          $scope.view.idcount = $scope.view.idcount + 1
+          $scope.newpost.id = $scope.view.idcount+1;
       })
-      .error(function (data, status, header, config) {
-          $scope.ResponseDetails = "Data: " + data +
-              "<hr />status: " + status +
-              "<hr />headers: " + header +
-              "<hr />config: " + config;
+      .error(function (data) {
+        console.log(data);
       });
     }
     $scope.clear = function(){
