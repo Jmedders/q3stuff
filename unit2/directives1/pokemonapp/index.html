@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokemonApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+</head>
+<body>
+  <div ng-controller="pokemonController">
+    <div ng-repeat="pokemoninfo in view.pokemonsarr">
+      <h4>{{pokemoninfo.name}} weighs {{pokemoninfo.weight}}kg, a {{pokemoninfo.types[0].type.name}} pokemon</h4>
+      <img src="{{pokemoninfo.sprites.front_shiny}}" alt="">
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
