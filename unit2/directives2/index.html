@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="toDoApp">
+<html lang="en" ng-app="mouseOverDirectiveApp">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
 </head>
 <body>
-  <div gs-change-background style="background-color: red">Hello World!</div>
+    <parent>
+      <gs-child>
+      </gs-child>
+    </parent>
+
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/directives.js"></script>
